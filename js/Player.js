@@ -22,7 +22,7 @@ class Player {
     return tokens;
     }
 
-      /* Gets all tokens that haven't yet been dropped.  
+    /* Gets all tokens that haven't yet been dropped.  
     */
 
     get unusedTokens() {
