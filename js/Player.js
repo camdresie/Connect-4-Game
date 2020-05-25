@@ -12,7 +12,7 @@ class Player {
   * @param   {integer}   num - Number of token objects to be created
   * @return  {array}     tokens - an array of new token objects
   */
- 
+
     createTokens(num) {
         const tokens = [];
         for (let i = 0; i < num; i++) {
@@ -20,5 +20,19 @@ class Player {
             tokens.push(token);
         }
     return tokens;
+    }
+
+      /* Gets all tokens that haven't yet been dropped.  
+    */
+
+    get unusedTokens() {
+        return this.tokens.filter(token => !token.dropped);
+    }
+
+    /* Gets the active token by returning the first token in an array of unusued tokens. 
+    */
+
+    get activeToken() {
+        return this.unusedTokens[0];
     }
 }
