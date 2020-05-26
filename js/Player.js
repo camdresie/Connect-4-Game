@@ -22,6 +22,10 @@ class Player {
     return tokens;
     }
 
+    checkTokens() {
+        return this.unusedTokens.length == 0 ? false : true;
+    }
+
     /* Gets all tokens that haven't yet been dropped.  
     */
 

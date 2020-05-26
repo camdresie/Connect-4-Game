@@ -3,7 +3,7 @@ class Token {
         this.owner = owner;
         this.id = `token-${index}-${owner.id}`;
         this.dropped = false;
-        this.columLocation = 0;
+        this.columnLocation = 0;
     }
 
     get HTMLToken() {
@@ -34,9 +34,9 @@ class Token {
  */
 
     moveLeft() {
-        if (this.columLocation > 0) {
+        if (this.columnLocation > 0) {
             this.HTMLToken.style.left = this.offsetLeft - 76;
-            this.columLocation -= 1;
+            this.columnLocation -= 1;
         }
     }
 
@@ -46,9 +46,9 @@ class Token {
  */
 
     moveRight(columns) {
-        if(this.columLocation < columns -1) {
+        if(this.columnLocation < columns -1) {
             this.HTMLToken.style.left = this.offsetLeft + 76;
-            this.columLocation += 1;
+            this.columnLocation += 1;
         }
     }
 
@@ -61,7 +61,7 @@ class Token {
     drop(target, reset) {
         this.dropped = true;
         
-        $(this.htmlToken).animate({
+        $(this.HTMLToken).animate({
             top: (target.y * target.diameter)
         }, 750, 'easeOutBounce', reset);
     }
