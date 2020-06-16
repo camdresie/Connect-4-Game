@@ -164,9 +164,11 @@ class Game {
                 this.ready = true;
             } else {
                 this.gameOver('No more tokens');
+                document.getElementById('new-game').hidden = false;
             }
         } else {
-            this.gameOver(`${target.owner.name} wins!`)
+            this.gameOver(`${target.owner.name} wins!`);
+            document.getElementById('new-game').hidden = false;
         }			
     }
 
